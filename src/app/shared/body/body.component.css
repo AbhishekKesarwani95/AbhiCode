@@ -1,0 +1,98 @@
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  body {
+    padding-top: 56px;
+    color:white;
+     /* Adjust based on the height of your navbar */
+  }
+  .container{
+    z-index:1;
+  }
+  .text-designed-color{
+    color: rgb(245, 112, 17);
+  }
+  .btn-color-blueviolet{
+    background-color: blueviolet;
+  }
+
+  .btn-svg{
+    height:1.2em;    
+    width:1.2em;
+    margin-left: 0.5em;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 0.2em;
+  }
+  .btn-outline-secondary{
+    color:white;
+  }
+  .text-heading{
+    background-image: linear-gradient(to right, orange, rgb(242, 70, 99),blue, white);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-color-white{
+    color:white;
+  }
+
+  /* For small screens (Mobile) */
+  @media (max-width: 991.98px) {
+    .vh-100 {
+      height: auto !important; /* Default behavior for small screens */
+    }
+    
+  }
+  
+ 
+  
+
+
+  /* Custom CSS */
+.teacher-card,.student-card,.aspirant-card,.parent-card {
+    background: linear-gradient(90deg, #5b128f, #6a139d); /* Gradient background */
+    border-radius: 50px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the card */
+  }
+  
+  .profile-pic {
+    width: 70px; /* Adjust the profile picture size */
+    height: 70px;
+  }
+  
+  .border-white {
+    border: 3px solid white; /* White border around the circular image */
+  }
+  
+  .bg-icon {
+    background-color: #65419a; /* Icon background color */
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .teacher-text {
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold;
+  }
+
+.teacher-hover-effect .teacher-card{
+
+    transition: background-color 3s transform 3s;
+}
+
+.teacher-card:hover {
+    background-color: aqua;
+    transform: scale(1)
+}

@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Abhishek Kes",
+      "email": "abhi@gmail.com",
+      "age": 24,
+      "password": "Abhi123"
+    },
+    {
+      "id": "2",
+      "name": "Abhishek",
+      "email": "abhi1@gmail.com",
+      "age": 22,
+      "password": "Abhi1234"
+    },
+    {
+      "id": "f9a1",
+      "name": "Abhishek Kesarwani",
+      "email": "abhishekkesarwani959@gmail.com",
+      "age": 24,
+      "password": "Abhi1234"
+    },
+    {
+      "id": "de1a",
+      "name": "Abhishek Kesarwani",
+      "email": "abhishekkesarwani959@gmail.com",
+      "age": 24,
+      "password": "Abhi12345"
+    }
+  ],
+  "profiles": [
+    {
+      "id":"1",
+      "name":"Abhishek Kes",
+      "email":"abhi1@gmail.com",
+      "age": 24,
+      "Intermediate":"Pass"
+    },
+    {
+      "id":"2",
+      "name":"Abhinav Kes",
+      "email":"abhinav@gmail.com",
+      "age": 23,
+      "Intermediate":"Pass"
+    },
+    {
+      "id":"3",
+      "name":"Shiksha",
+      "email":"shiksha@gmail.com",
+      "age": 22,
+      "Intermediate":"Pass"
+    },
+    {
+      "id":"4",
+      "name":"Simran",
+      "email":"simran@gmail.com",
+      "age": 29,
+      "Intermediate":"Pass"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+.navbar-background{
+    background: linear-gradient(45deg,#69138e,#561351,#370c4a);
+}
+
+.item-free{
+    background: linear-gradient(45deg,#6397fe,#0b64fe);
+    font-weight:800;
+}
+
+.btn-color-blueviolet{
+    background-color: blueviolet;
+
+  }
+
+  .nav-bold{
+    font-weight: 700;
+    
+  }
