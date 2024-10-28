@@ -1,0 +1,25 @@
+<h2>
+    {{isEditMode ? 'Update Profile Form' : 'Add Profile Form' }}
+</h2>
+<mat-dialog-content>
+    <form [formGroup]="profileForm" class="popup-form">
+        <mat-form-field class="popup-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="ABHi" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field class="popup-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+        </mat-form-field >
+        <mat-form-field class="popup-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age"/>
+        </mat-form-field>
+
+    </form>
+    
+</mat-dialog-content>
+<mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button (click)="onSaveorUpdate()" cdkFocusInitial>{{isEditMode ? 'Update Profile' : 'Save Profile' }}</button>
+</mat-dialog-actions>

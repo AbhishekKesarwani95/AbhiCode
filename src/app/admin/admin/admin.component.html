@@ -1,65 +1,67 @@
-  
-  <!-- Modal -->
-  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="profileModalLabel">{{ editingProfileId ? 'Edit Profile' : 'Add Profile' }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="profileForm" (ngSubmit)="editingProfileId ? updateProfile() : addProfile()">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input id="name" formControlName="name" type="text" class="form-control" />
-            </div>
-            
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input id="email" formControlName="email" type="email" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input id="age" formControlName="age" type="number" class="form-control" />
-              </div>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">{{ editingProfileId ? 'Update Profile' : 'Add Profile' }}</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
+
 
 
 <div class="container pt-5">
     <div class="card">
         <div class="card-body">
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#profileModal">Add</button>
+            <button type="button" (click)="openPopup()">Add Profile</button>
         </div>
     </div>
-    <div>
-        <table class="table table-info border table-striped">
-            <thead>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Age</th>
-                <th></th>
-            </thead>    
-            <tbody>
-                <tr *ngFor="let profile of profiles">
-                    <td>{{profile.id}}</td>
-                    <td>{{profile.name}}</td>
-                    <td>{{profile.email}}</td>
-                    <td>{{profile.age}}</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning me-2" (click)="editProfile(profile.id)" data-bs-toggle="modal" data-bs-target="#profileModal">Edit</button>
-                        <button class="btn btn-sm btn-danger" (click)="deleteProfile(profile.id)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div *ngIf="isLoading" class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+    
+    <div >
+      <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                ID
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{element.id}}
+              </td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Name
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{element.name}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Email
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.email}}
+          </td>
+      </ng-container>
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Age
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{element.age}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef >
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <button (click)="editProfile(row)">Edit Profile</button>
+          <button (click)="deleteProfile(row)">Delete Profile</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+      <tr mat-row *matRowDef="let row; columns:displayedColumn"></tr>
+      </table>
+        <mat-paginator [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page">
+        </mat-paginator>
     </div>
     
     
